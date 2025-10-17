@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DoggieZen – Psí wellness</title>
+  <style>
+
+    .info-section {
+  background: #fff8e1;
+  padding: 2em;
+  text-align: center;
+}
+
+.info-section.alt {
+  background: #ffe0b2; /* pro střídání barev mezi sekcemi */
+}
+
+.info-section h2 {
+  margin-bottom: 0.5em;
+}
+
+.info-section p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+
+    .feature-buttons {
+  background: #fff3e0;
+  padding: 2em;
+  text-align: center;
+}
+
+.feature-buttons h2 {
+  margin-bottom: 1em;
+}
+
+.feature-buttons .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+
+.feature-buttons .buttons a {
+  background-color: #ffb74d;
+  color: white;
+  padding: 0.8em 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.feature-buttons .buttons a:hover {
+  background-color: #fb8c00;
+}
+
+@media (max-width: 600px) {
+  .feature-buttons .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-buttons .buttons a {
+    width: 80%;
+  }
+}
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fdfcfb;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background: #ffe0b2;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5em;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 2em;
+      background: #fff3e0;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+    }
+
+    .hero-text p {
+      font-size: 1.2em;
+    }
+
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1em;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    .services, .gallery {
+      background: #fff8e1;
+    }
+
+    .services h2, .gallery h2 {
+      margin-bottom: 1em;
+    }
+
+    .services p {
+      max-width: 600px;
+    }
+
+    .gallery-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .gallery-images img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 0.5em;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #ffe0b2;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1em;
+        border-radius: 0.5em;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🐾 DoggieZen</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav id="nav-menu">
+      <a href="#sluzby">Služby</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>DoggieZen</h1>
+      <p>Wellness pro psy, kteří si zaslouží ten nejlepší relax.</p>
+    </div>
+    <div class="hero-img">
+      <img src="https://www.sportovni-kynologie.cz/wp-content/uploads/psi-lazne.jpg" alt="Pes v lázních">
+    </div>
+  </section>
+
+  <section class="services" id="sluzby">
+    <h2>Naše služby</h2>
+    <p>
+      Nabízíme masáže pro psy, hydroterapii, aromaterapii, psí saunu a relaxační místnost s hudbou a vůněmi. Váš pejsek si odpočine jako nikdy předtím!
+    </p>
+  </section>
+
+  <section class="feature-buttons">
+  <h2>Rychlý přístup</h2>
+  <div class="buttons">
+    <a href="#masaze">Masáže</a>
+    <a href="#rezervace">Rezervace</a>
+    <a href="#cenik">Ceník</a>
+  </div>
+</section>
+
+
+  <section class="gallery" id="galerie">
+    <h2>Galerie</h2>
+    <div class="gallery-images">
+      <img src="https://www.zoohit.cz/magazin/wp-content/uploads/2020/08/Pes-ve-van%C4%9B.webp" alt="Pes ve vaně">
+      <img src="https://ecefb58d7d.cbaul-cdnwnd.com/c6799f4b1c865520d768f8e73743644b/200000019-a0499a1428/masaze-psu.jpg?ph=ecefb58d7d" alt=" pes">
+      <img src="https://www.ecanis.cz/images/clanky/preview/1494090192.jpg" alt="Pes na masáži">
+    </div>
+  </section>
+
+  <section id="masaze" class="info-section">
+  <h2>Masáže pro psy</h2>
+  <p>Uvolněte napětí svého mazlíčka pomocí profesionálních psích masáží. Nabízíme klasické, aromatické i sportovní masáže na míru.</p>
+</section>
+
+<section id="rezervace" class="info-section alt">
+  <h2>Rezervace</h2>
+  <p>Rezervujte si termín snadno online nebo telefonicky. Nabízíme flexibilní časy a individuální přístup.</p>
+</section>
+
+<section id="cenik" class="info-section">
+  <h2>Ceník</h2>
+  <p>Ceny se liší podle zvolené služby. Například: masáž 30 min – 490 Kč, koupel + sušení – 590 Kč, wellness balíček – od 990 Kč.</p>
+</section>
+
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Navštivte nás v DoggieZen centru nebo nám napište na info@doggiezen.cz</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
 
