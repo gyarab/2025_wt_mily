@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FATFUCK Smash Burgers — Vinohrady</title>
+  <meta name="description" content="FATFUCK Smash Burgers — tenké křupavé burgery na Vinohradech. Take-away, milkshakes a lokální suroviny." />
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --brand: #d33;
+      --accent: #222;
+    }
+    .hero {
+      background-size: cover;
+      background-position: center;
+      color: white;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+    }
+    .logo-text { font-weight: 800; letter-spacing: 1px; }
+    .card-img-top { object-fit: cover; height: 160px; }
+    .nav-link.active { font-weight:700; }
+    footer { background:#111; color:#ddd; padding:2rem 0; }
+    .badge-brand { background: var(--brand); color: white; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+<!-- NAVBAR -->
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#hero">
+      <svg width="34" height="34" viewBox="0 0 24 24" class="me-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <rect width="24" height="24" rx="4" />
+      </svg>
+      <span class="logo-text">FATFUCK</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+      aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#about">O nás</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
+        <li class="nav-item"><a class="nav-link" href="#subscribe">Newsletter</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="hero" class="hero" style="background-image: url('https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=1200&q=80');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-6">
+        <span class="badge badge-brand mb-2">Novinka</span>
+        <h1 class="display-4 fw-bold">FATFUCK Smash Burgers — Vinohrady</h1>
+        <p class="lead">Tenčí, křupavé okraje. Lokální suroviny. Milkshakes. Fast-casual s přesahem řemesla.</p>
+        <p>
+          <a href="#menu" class="btn btn-lg btn-light me-2">Prohlédnout menu</a>
+          <a href="#contact" class="btn btn-outline-light btn-lg">Objednat / Kontakt</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="py-5">
+
+  <!-- ABOUT -->
+  <section id="about" class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h2>O nás</h2>
+        <p class="text-muted">FATFUCK je lokální burger joint na Vinohradech — děláme smash burgery s důrazem na texturu a chuť. Krátký proces: kvalitní maso, rozpálená plotna, pevný stisk a okamžité karamelizace.</p>
+        <ul>
+          <li>Čerstvé bulky, domácí omáčky</li>
+          <li>Take-away i posezení</li>
+          <li>Výběrové pivo a milkshakes</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80" alt="Vinohrady" class="img-fluid rounded shadow-sm" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4">Menu — vybrané položky</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQovdkT4Ko9Wt__PzSmmzKtu6Sxppg-qkyTjohJqIc1xg&s=10" class="card-img-top" alt="Classic Smash">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Classic Smash</h5>
+              <p class="card-text text-muted">100 % hovězí, domácí bulky, kyselá okurka, sýr.</p>
+              <div class="mt-auto">
+                <span class="fw-bold">149 Kč</span>
+                <a href="#contact" class="btn btn-sm btn-outline-primary float-end">Objednat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT7pKzg0i7dFNF7Ou6ZKHdSoYHPBzyR42BkU5AWaHLIYlphjGPpe7mhbI&s=10" class="card-img-top" alt="Double Fat">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Double FAT</h5>
+              <p class="card-text text-muted">Dvojitý smash, double cheese, karamelizovaná cibulka.</p>
+              <div class="mt-auto">
+                <span class="fw-bold">199 Kč</span>
+                <a href="#contact" class="btn btn-sm btn-outline-primary float-end">Objednat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjoWpl-6CDbN45QjkNbqq8vOq664YoFlB2mHzy57UlVxQfaqka2h8nIeM&s=10" class="card-img-top" alt="Veggie Smash">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Veggie Smash</h5>
+              <p class="card-text text-muted">Grilované houby, house sauce, čerstvý salát.</p>
+              <div class="mt-auto">
+                <span class="fw-bold">159 Kč</span>
+                <a href="#contact" class="btn btn-sm btn-outline-primary float-end">Objednat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="container py-5">
+    <h2 class="mb-4">Galerie</h2>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ZfqQxXkGZcww4oWhyJ0Vy5QE-q3F1aD-tXTzc5EH_EXGbvZ3n6Rpg5Pn&s=10" alt="burger closeup" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=600&q=80" alt="kitchen" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRehxKcrwcwfVQA6bG4_SFHf7GzDut1rZRan1ADNbM-gpNNwhqXwsjKvINA&s=10" alt="milkshake" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="interior" class="img-fluid rounded">
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="subscribe" class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>Přihlaste se k odběru novinek</h2>
+          <p class="text-muted">Speciální nabídky, nové příchutě a týdenní dropy přímo do e-mailu.</p>
+        </div>
+        <div class="col-md-6">
+          <form class="row g-2" onsubmit="return false;">
+            <div class="col-sm-8">
+              <input id="email" type="email" class="form-control" placeholder="vas@email.cz" required>
+            </div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn btn-warning w-100">Přihlásit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container py-5">
+    <h2>Kontakt & adresa</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <h5>FATFUCK Smash Burgers — Vinohrady</h5>
+        <p>Korunní 123, 120 00 Praha 2 – Vinohrady</p>
+        <p>Otevírací doba: Po–Pá 11:00–22:00, So–Ne 12:00–22:00</p>
+        <p>Tel: <a href="tel:+420123456789">+420 123 456 789</a> | Email: <a href="mailto:info@fatfuck.cz">info@fatfuck.cz</a></p>
+      </div>
+      <div class="col-lg-6">
+        <div class="ratio ratio-16x9 rounded" style="overflow:hidden;">
+          <iframe src="https://www.google.com/maps?q=Vinohrady+Prague&output=embed" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5>FATFUCK Smash Burgers</h5>
+        <p class="small text-muted">© <span id="year"></span> FATFUCK. Všechna práva vyhrazena.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="#" class="text-light me-2">Instagram</a>
+        <a href="#" class="text-light me-2">Facebook</a>
+        <a href="#" class="text-light">Tripadvisor</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const t = document.querySelector(this.getAttribute('href'));
+      if(t){
+        e.preventDefault();
+        t.scrollIntoView({behavior:'smooth'});
+        const bsC = bootstrap.Collapse.getInstance(document.querySelector('.navbar-collapse'));
+        if(bsC && window.getComputedStyle(document.querySelector('.navbar-toggler')).display!=='none'){bsC.hide();}
+      }
+    });
+  });
+</script>
+</body>
+</html>
