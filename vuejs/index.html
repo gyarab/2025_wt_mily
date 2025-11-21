@@ -8,5 +8,28 @@
 <body>
     <h1>VueJS</h1>
     <a href="https://htmx.org/docs">Dokumentace HTMX</a>
+
+    <div id="app">
+        {{ message }}
+        <br>
+        {{'Random number: ' + Math.ceil(Math.random() * 6)}}
+        <br>
+        <buttton @click="count++" >Kliknuto: {{count}}</button>
+
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const App = Vue.createApp({
+            data() {
+            return {
+                message: 'Hello Vue!'
+            }
+            }
+        })
+
+        app.mount('#app')
+    </script>
 </body>
 </html>
