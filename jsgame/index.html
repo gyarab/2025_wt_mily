@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Uhodni číslo!</h1>
+
+    <p>Hádej číslo od 1 do 20</p>
+
+    <input id="startBtn" type="button" value="Start Game">
+
+    <br><br>
+
+    <input id="guess" 
+           type="number" 
+           min="1" 
+           max="20"
+           placeholder="Zadej svoje číslo">
+
+    <input id="guessBtn" value="Hádej!" type="button">
+
+    <p id="message"></p>
+
+    <p>Pocet pokusu: <span id="attempts">0</span></p>
+
+<script>
+    let secretNumber;
+    let attempts;
+    const maxAttempts = 10;
+
+    function startGame() {
+        secretNumber = Math.floor(Math.random() * 20) + 1;
+        attempts = 0;
+
+        document.getElementById("attempts").textContent = attempts;
+        document.getElementById("message").textContent = "";
+        document.getElementById("message").style.color = "black";
+
+        console.log('--- NOVÁ HRA ---');
+        console.log('Tajné číslo je:', secretNumber);
+    }
+
+    function checkGuess() {
+        const inputEl = document.getElementById('guess');
+        const attemptsEl = document.getElementById('attempts');
+        const messageEl = document.getElementById('message');
+
+        const guess = Number(inputEl.value);
+
+        if (guess < 1 || guess > 20 || isNaN(guess)) {
+            messageEl.textContent = "❌ Zadej číslo mezi 1 a 20!";
+            messageEl.style.color = "orange";
+            console.log(`Neplatný vstup: ${guess}`);
+            return;
+        }
+
+        attempts++;
+        attemptsEl.textContent = attempts;
+        console.log(`Pokus ${attempts}: hráč hádá ${guess}`);
+
+        if (guess === secretNumber) {
+            messageEl.textContent = "🎉 Výhra! Uhodl jsi číslo!";
+            messageEl.style.color = "green";
+            console.log("Hráč VYHRÁL!");
+            return;
+        }
+
+        if (attempts >= maxAttempts) {
+            messageEl.textContent = `💀 Prohra! Tajné číslo bylo ${secretNumber}`;
+            messageEl.style.color = "red";
+            console.log("Hráč PROHRÁL!");
+            return;
+        }
+
+        if (guess < secretNumber) {
+            messageEl.textContent = "Zkus větší číslo!";
+            messageEl.style.color = "black";
+        } else {
+            messageEl.textContent = "Zkus menší číslo!";
+            messageEl.style.color = "black";
+        }
+    }
+
+    document.getElementById('guessBtn').addEventListener('click', checkGuess);
+    document.getElementById('startBtn').addEventListener('click', startGame);
+
+    document.getElementById('guess').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            checkGuess();
+        }
+    });
+
+    startGame();
+</script>
+</body>
+</html>
