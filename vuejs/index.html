@@ -24,7 +24,7 @@
         const App = Vue.createApp({
             data() {
             return {
-                message: 'Hello Vue!'
+                message: 'Hello World!'
             }
             }
         })
@@ -32,4 +32,34 @@
         app.mount('#app')
     </script>
 </body>
+    <div class="container text center">
+        <h1>VueJS</h1>   
+        <a href="https://vuejs.org/guide/introduction" target="_blank">VueJS docs</a>  </div>
+        <div class="card">
+            <form>
+                <div>
+                <input class="form-control" type="text" id="name" name="name" placeholder="Enter your name">
+                </div>
+                <div>
+                <select name="planet" id="planet">
+                    <option value="Merkur">Mercury</option>
+                    <option value="Venuše">Venus</option>
+                    <option value="Země">Earth</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Uran">Uranus</option>
+                    <option value="Neptun">Neptune</option>
+                </select>  
+                </div>
+                <div>   
+                    <input class="form-control" type="number" id="days" name="days">
+                    <input class="form-control" type="time" id="time" name="time">
+                </div>
+                <div>
+                    <input class="form-check-input" type="date" id="date" name="date">
+                <div>
+                    <button class="btn btn-primary" type="Odeslat">Submit</button>
+            </form>
+
 </html>
