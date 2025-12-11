@@ -1,65 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</html>
+    <title>Registrace na meziplanetární výlet</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            max-width: 600px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        input, select {
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 8px;
+        }
+
+        .note {
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
 <body>
-    <h1>VueJS</h1>
-    <a href="https://htmx.org/docs">Dokumentace HTMX</a>
 
-    <div id="app">
-        {{ message }}
-        <br>
-        {{'Random number: ' + Math.ceil(Math.random() * 6)}}
-        <br>
-        <buttton @click="count++" >Kliknuto: {{count}}</button>
+<h1>Registrace na meziplanetární výlet</h1>
 
-    <div id="app"></div>
+<div id="app">
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- FORMULÁŘ -->
+    <div class="card">
+        <form @submit.prevent>
+            <label>Jméno astronauta:</label>
+            <input type="text" v-model="name">
 
-    <script>
-        const App = Vue.createApp({
-            data() {
-            return {
-                message: 'Hello World!'
-            }
-            }
-        })
+            <label>Destinace:</label>
+            <select v-model="planet">
+                <option value="Merkur">Merkur</option>
+                <option value="Venuše">Venuše</option>
+                <option value="Měsíc">Měsíc</option>
+                <option value="Mars">Mars</option>
+            </select>
 
-        app.mount('#app')
-    </script>
+            <label>Počet dní:</label>
+            <input type="number" min="1" v-model="days">
+
+            <label>
+                <input type="checkbox" v-model="agree">
+                Souhlasím že se může stát, že se vrátím o něco později než je plánováno.
+            </label>
+
+            <p class="note">
+                Tento formulář žádná data neodesílá - vše se děje pouze v prohlížeči.
+            </p>
+
+            <button type="submit">Odeslat přihlášku</button>
+        </form>
+    </div>
+
+    <!-- PALUBNÍ LÍSTEK -->
+    <div class="card">
+        <h2>Palubní lístek</h2>
+
+        <p><strong>Jméno:</strong> {{ name || "-" }}</p>
+        <p><strong>Destinace:</strong> {{ planet }}</p>
+        <p><strong>Počet dní:</strong> {{ days }}</p>
+
+        <p><strong>Odhadovaná cena:</strong> {{ days * 800 }} kreditů</p>
+
+        <p class="note">
+            Pokud si to rozmyslíš, můžeš úpravy v formuláři měnit - palubní lístek se automaticky aktualizuje.
+        </p>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+const app = Vue.createApp({
+    data() {
+        return {
+            name: "",
+            planet: "Merkur",
+            days: 1,
+            agree: false
+        }
+    }
+});
+app.mount("#app");
+</script>
+
 </body>
-    <div class="container text center">
-        <h1>VueJS</h1>   
-        <a href="https://vuejs.org/guide/introduction" target="_blank">VueJS docs</a>  </div>
-        <div class="card">
-            <form>
-                <div>
-                <input class="form-control" type="text" id="name" name="name" placeholder="Enter your name">
-                </div>
-                <div>
-                <select name="planet" id="planet">
-                    <option value="Merkur">Mercury</option>
-                    <option value="Venuše">Venus</option>
-                    <option value="Země">Earth</option>
-                    <option value="Mars">Mars</option>
-                    <option value="Jupiter">Jupiter</option>
-                    <option value="Saturn">Saturn</option>
-                    <option value="Uran">Uranus</option>
-                    <option value="Neptun">Neptune</option>
-                </select>  
-                </div>
-                <div>   
-                    <input class="form-control" type="number" id="days" name="days">
-                    <input class="form-control" type="time" id="time" name="time">
-                </div>
-                <div>
-                    <input class="form-check-input" type="date" id="date" name="date">
-                <div>
-                    <button class="btn btn-primary" type="Odeslat">Submit</button>
-            </form>
-
 </html>
